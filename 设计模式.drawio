@@ -1,0 +1,167 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="NPC对话系统类图" id="LYdyGaQ75s-eEkJpQoSg">
+    <mxGraphModel dx="1915" dy="1135" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4YO6oIEgbveJMG-xYls9-2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" value="Stendhal NPC对话系统类图" vertex="1">
+          <mxGeometry height="40" width="500" x="910" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" value="图例" vertex="1">
+          <mxGeometry height="20" width="50" x="480" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Context角色" vertex="1">
+          <mxGeometry height="25" width="100" x="480" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="State角色" vertex="1">
+          <mxGeometry height="25" width="100" x="590" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Strategy接口" vertex="1">
+          <mxGeometry height="25" width="100" x="700" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="ConcreteStrategy" vertex="1">
+          <mxGeometry height="25" width="120" x="810" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="辅助类" vertex="1">
+          <mxGeometry height="25" width="100" x="940" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;align=center;" value="«enumeration»&#xa;ConversationStates" vertex="1">
+          <mxGeometry height="40" width="200" x="330" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;spacingLeft=10;" value="+ IDLE&#xa;+ ATTENDING&#xa;+ QUEST_OFFERED&#xa;+ BUY_PRICE_OFFERED&#xa;+ SELL_PRICE_OFFERED&#xa;+ HEAL_OFFERED&#xa;+ PRODUCTION_OFFERED&#xa;+ SERVICE_OFFERED&#xa;+ REPAIR_OFFERED&#xa;+ ANY&#xa;+ ..." vertex="1">
+          <mxGeometry height="200" width="200" x="330" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;align=center;" value="SpeakerNPC" vertex="1">
+          <mxGeometry height="35" width="260" x="890" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;align=left;spacingLeft=10;" value="- engine: Engine&#xa;- attending: RPEntity&#xa;- waitMessage: String&#xa;- goodbyeMessage: String&#xa;- playerChatTimeout: long&#xa;- lastMessageTurn: long&#xa;- learnedWords: Set&lt;String&gt;" vertex="1">
+          <mxGeometry height="110" width="260" x="890" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;align=left;spacingLeft=10;" value="+ SpeakerNPC(name: String)&#xa;+ add(state, trigger, nextState, reply)&#xa;+ add(state, trigger, condition, nextState, reply, action)&#xa;+ setCurrentState(state: ConversationStates)&#xa;+ getEngine(): Engine&#xa;+ endConversation()&#xa;+ say(text: String)&#xa;+ listenTo(player: Player, text: String)&#xa;+ logic()&#xa;+ preLogic()" vertex="1">
+          <mxGeometry height="150" width="260" x="890" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;fontStyle=1;align=center;" value="Engine" vertex="1">
+          <mxGeometry height="30" width="180" x="1370" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;align=left;spacingLeft=10;" value="- currentState: ConversationStates&#xa;- transitions: List&lt;Transition&gt;" vertex="1">
+          <mxGeometry height="50" width="180" x="1370" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;align=left;spacingLeft=10;" value="+ step(player, text): boolean&#xa;+ add(...)&#xa;+ setCurrentState(state)&#xa;+ getCurrentState(): ConversationStates&#xa;+ getTransitions(): List&lt;Transition&gt;" vertex="1">
+          <mxGeometry height="90" width="180" x="1370" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;align=center;fontColor=#333333;" value="«interface»&#xa;ChatCondition" vertex="1">
+          <mxGeometry height="45" width="200" x="515" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-40" edge="1" parent="1" source="4YO6oIEgbveJMG-xYls9-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="4YO6oIEgbveJMG-xYls9-22" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;spacingLeft=10;" value="+ fire(player: Player,&#xa;  sentence: Sentence,&#xa;  npc: Entity): boolean" vertex="1">
+          <mxGeometry height="55" width="200" x="515" y="745" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;align=center;fontColor=#333333;" value="«interface»&#xa;ChatAction" vertex="1">
+          <mxGeometry height="45" width="200" x="970" y="745" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;spacingLeft=10;" value="+ fire(player: Player,&#xa;  sentence: Sentence,&#xa;  npc: EventRaiser)" vertex="1">
+          <mxGeometry height="55" width="200" x="970" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;align=center;" value="PlayerHasItemWithHim&#xa;Condition" vertex="1">
+          <mxGeometry height="40" width="200" x="515" y="875" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;align=left;spacingLeft=10;" value="+ fire(player, sentence, npc): boolean" vertex="1">
+          <mxGeometry height="40" width="200" x="515" y="915" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;align=center;" value="EquipItemAction" vertex="1">
+          <mxGeometry height="40" width="200" x="970" y="990" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;align=left;spacingLeft=10;" value="+ fire(player, sentence, npc)" vertex="1">
+          <mxGeometry height="40" width="200" x="970" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;align=center;" value="MonologueBehaviour" vertex="1">
+          <mxGeometry height="30" width="200" x="1300" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;align=left;spacingLeft=10;" value="- speakerNPC: SpeakerNPC&#xa;- repeatedText: String[]&#xa;- minutes: int&#xa;- i: int" vertex="1">
+          <mxGeometry height="70" width="200" x="1300" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;align=left;spacingLeft=10;" value="+ MonologueBehaviour(...)&#xa;+ onTurnReached(currentTurn: int)" vertex="1">
+          <mxGeometry height="50" width="200" x="1300" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-28" edge="1" parent="1" source="4YO6oIEgbveJMG-xYls9-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" target="4YO6oIEgbveJMG-xYls9-10" value="依赖">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="830" y="302" />
+              <mxPoint x="830" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-29" edge="1" parent="1" source="4YO6oIEgbveJMG-xYls9-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=0;strokeColor=#666666;" target="4YO6oIEgbveJMG-xYls9-14" value="聚合">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="330" />
+              <mxPoint x="1190" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-30" edge="1" parent="1" source="4YO6oIEgbveJMG-xYls9-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#d6b656;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="4YO6oIEgbveJMG-xYls9-17" value="使用(作为参数)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="615" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-31" edge="1" parent="1" source="4YO6oIEgbveJMG-xYls9-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#d6b656;" target="4YO6oIEgbveJMG-xYls9-19" value="使用(作为参数)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="580" />
+              <mxPoint x="1070" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-32" edge="1" parent="1" source="4YO6oIEgbveJMG-xYls9-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#d79b00;" target="4YO6oIEgbveJMG-xYls9-18" value="实现">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="610" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-33" edge="1" parent="1" source="4YO6oIEgbveJMG-xYls9-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#d79b00;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="4YO6oIEgbveJMG-xYls9-20" value="实现">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="1070" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-34" edge="1" parent="1" source="4YO6oIEgbveJMG-xYls9-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#666666;entryX=0.981;entryY=0.628;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.446;exitY=-0.091;exitDx=0;exitDy=0;exitPerimeter=0;" target="4YO6oIEgbveJMG-xYls9-13" value="关联">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="742" />
+              <mxPoint x="1340" y="479" />
+            </Array>
+            <mxPoint x="1410" y="650" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-35" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#82b366;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="检查状态">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1338" y="895" />
+              <mxPoint x="1338" y="1100" />
+              <mxPoint x="368" y="1100" />
+              <mxPoint x="368" y="380" />
+            </Array>
+            <mxPoint x="1338" y="890" as="sourcePoint" />
+            <mxPoint x="412" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;align=center;" value="【状态模式】" vertex="1">
+          <mxGeometry height="30" width="120" x="344" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;spacingLeft=5;" value="Context: SpeakerNPC&#xa;State: ConversationStates" vertex="1">
+          <mxGeometry height="45" width="140" x="344" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-38" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;align=center;" value="【策略模式】" vertex="1">
+          <mxGeometry height="30" width="120" x="775" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="4YO6oIEgbveJMG-xYls9-39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;spacingLeft=5;" value="Strategy: ChatCondition / ChatAction&#xa;ConcreteStrategy: 具体条件/动作类" vertex="1">
+          <mxGeometry height="60" width="150" x="760" y="815" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
